@@ -24,7 +24,7 @@ echo "allow apps downloaded from anywhere"
 sudo spctl --master-disable
 
 echo "installing a few global npm packages"
-npm install --global parcel-bundler fkill-cli yarn
+npm install --global fkill-cli yarn
 
 echo "installing apps with brew cask"
 brew install --cask discord
