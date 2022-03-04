@@ -40,7 +40,7 @@ brew install --cask slack
 brew install --cask tandem
 brew install --cask zoom
 brew install --cask flipper
-brew install --cask reactotron
+brew install --cask tunnelblick
 brew install --cask postman
 brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 brew cleanup
