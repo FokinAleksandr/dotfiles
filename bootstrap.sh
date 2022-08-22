@@ -36,7 +36,6 @@ brew install --cask webstorm
 brew install --cask telegram
 brew install --cask yandex-disk
 brew install --cask slack
-brew install --cask tandem
 brew install --cask zoom
 brew install --cask flipper
 brew install --cask postman
