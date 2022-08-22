@@ -32,7 +32,6 @@ brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask visual-studio-code
 brew install --cask vlc
-brew install --cask spotify
 brew install --cask webstorm
 brew install --cask telegram
 brew install --cask yandex-disk
@@ -40,7 +39,6 @@ brew install --cask slack
 brew install --cask tandem
 brew install --cask zoom
 brew install --cask flipper
-brew install --cask tunnelblick
 brew install --cask postman
 brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 brew cleanup
