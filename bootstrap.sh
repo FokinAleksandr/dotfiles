@@ -22,7 +22,6 @@ brew install watchman
 brew install node
 brew install mc
 
-chsh -s "/bin/zsh"
 echo "allow apps downloaded from anywhere"
 sudo spctl --master-disable
 
