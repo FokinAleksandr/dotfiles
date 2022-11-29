@@ -35,17 +35,9 @@ brew install --cask vlc
 brew install --cask webstorm
 brew install --cask telegram
 brew install --cask yandex-disk
-brew install --cask slack
 brew install --cask zoom
-brew install --cask flipper
 brew install --cask postman
-brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 brew cleanup
-
-sudo gem install cocoapods -n /usr/local/bin
-brew tap facebook/fb
-brew install idb-companion
-sudo -H python3 -m pip install fb-idb -v
 
 echo "cloning dotfiles"
 rm -rf "${HOME}/Sources/dotfiles"
