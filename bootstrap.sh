@@ -12,6 +12,9 @@ mkdir -p "${HOME}/Sources"
 
 echo "installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo '# Set PATH, MANPATH, etc., for Homebrew.'
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "brew installing stuff"
 brew install git
