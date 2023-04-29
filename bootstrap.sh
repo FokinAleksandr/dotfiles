@@ -29,6 +29,8 @@ echo "installing a few global npm packages"
 npm install --global fkill-cli yarn
 
 echo "installing apps with brew cask"
+brew tap homebrew/cask-versions
+brew install --cask zulu11
 brew install --cask discord
 brew install --cask google-chrome
 brew install --cask firefox
