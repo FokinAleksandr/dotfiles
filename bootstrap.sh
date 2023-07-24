@@ -16,10 +16,11 @@ echo "installing homebrew"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "brew installing stuff"
-brew install nvm
 brew install git
 brew install watchman
 brew install mc
+brew install nvm
+mkdir ~/.nvm
 
 echo "installing a few global npm packages"
 npm install --global fkill-cli
