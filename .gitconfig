@@ -1,104 +1,85 @@
 [user]
-	name = Alexander Fokin
+	name = Fokin Alexander
 	email = shwayze@yandex.ru
 
-[alias]
+[init]
+	defaultBranch = main
 
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	lg = log --pretty=oneline -n 20 --graph --abbrev-commit
+[fetch]
+	prune = true
 
-	# View the current working tree status using the short format
-	st = status -s
-
-	# Commit all changes
-	ca = !git add -A && git commit -av
-
-	co = checkout
-
-	# Remove branches that have already been merged with master
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
-	# List contributors with number of commits
-	contributors = shortlog --summary --numbered
-
-[apply]
-
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-
-[core]
-
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-	# Make `git rebase` safer on macOS
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-
-	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
-
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+[status]
+	short = true
 
 [color]
-
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+  ui = auto
 
 [color "branch"]
-
 	current = yellow reverse
 	local = yellow
 	remote = green
 
 [color "diff"]
-
 	meta = yellow bold
 	frag = magenta bold # line info
 	old = red # deletions
 	new = green # additions
 
 [color "status"]
-
 	added = yellow
 	changed = green
 	untracked = cyan
 
-[commit]
+[alias]
+  # List available aliases
+  aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	# View the current working tree status using the short format
+	st = status
+	# Commit all changes
+	ca = !git add -A && git commit -av
+	co = checkout
+	# Remove branches that have already been merged with master
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	# List contributors with number of commits
+	contributors = shortlog --summary --numbered
 
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = false
-
-[diff]
-
-	# Detect copies as well as renames
-	renames = copies
+[core]
+	# Use custom `.gitignore` and `.gitattributes`
+	excludesfile = ~/.gitignore
+  # Don't paginate output by default
+  pager = cat
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	# Make `git rebase` safer on macOS
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
 
 [help]
-
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
 
 [merge]
-
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	# Disable fast-forward merges as default merge strategy.
+  # Force explicit call of `git merge --ff …`.
+  ff = false
 
 [lfs]
-    contenttype = false
+	contenttype = false
 
 [push]
-
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = current
 	# Make `git push` push relevant annotated tags when pushing branches out.
@@ -106,5 +87,4 @@
 	autoSetupRemote = true
 
 [pull]
-
 	rebase = true
