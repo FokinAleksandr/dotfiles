@@ -1,15 +1,15 @@
 [user]
-  name = Fokin Alexander
-	email = shwayze@yandex.ru
+        name = Fokin Alexander
+        email = shwayze@yandex.ru
 
 [init]
-	defaultBranch = main
+        defaultBranch = main
 
 [fetch]
-	prune = true
+        prune = true
 
 [status]
-	short = true
+        short = true
 
 [color]
 	ui = auto
@@ -49,8 +49,8 @@
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
-  # Don't paginate output by default
-  pager = cat
+        # Don't paginate output by default
+        pager = cat
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
@@ -73,8 +73,8 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 	# Disable fast-forward merges as default merge strategy.
-  # Force explicit call of `git merge --ff …`.
-  ff = false
+        # Force explicit call of `git merge --ff …`.
+        ff = false
 
 [lfs]
 	contenttype = false
