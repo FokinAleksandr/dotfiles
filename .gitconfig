@@ -12,7 +12,7 @@
 	short = true
 
 [color]
-  ui = auto
+	ui = auto
 
 [color "branch"]
 	current = yellow reverse
