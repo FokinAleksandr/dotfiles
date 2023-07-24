@@ -7,23 +7,22 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-echo "mkdir -p ${HOME}/Sources"
-mkdir -p "${HOME}/Sources"
-
-echo "installing homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo "brew installing stuff"
-brew install git
-brew install watchman
-brew install node
-brew install mc
-
 echo "allow apps downloaded from anywhere"
 sudo spctl --master-disable
 
+echo "installing homebrew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+echo "brew installing stuff"
+brew install nvm
+brew install git
+brew install watchman
+brew install mc
+
 echo "installing a few global npm packages"
-npm install --global fkill-cli yarn
+npm install --global fkill-cli
 
 echo "installing apps with brew cask"
 brew tap homebrew/cask-versions
@@ -35,9 +34,7 @@ brew install --cask visual-studio-code
 brew install --cask vlc
 brew install --cask webstorm
 brew install --cask telegram
-brew install --cask yandex-disk
 brew install --cask zoom
-brew install --cask postman
 brew cleanup
 
 echo "cloning dotfiles"
