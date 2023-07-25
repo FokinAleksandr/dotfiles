@@ -23,7 +23,8 @@ brew install nvm
 mkdir ~/.nvm
 
 echo "installing a few global npm packages"
-npm install --global fkill-cli
+npm install -g fkill-cli
+npm install -g react-devtools
 
 echo "installing apps with brew cask"
 brew tap homebrew/cask-versions
