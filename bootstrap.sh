@@ -19,6 +19,7 @@ echo "brew installing stuff"
 brew install git
 brew install watchman
 brew install mc
+brew install rbenv ruby-build
 brew install nvm
 mkdir ~/.nvm
 
