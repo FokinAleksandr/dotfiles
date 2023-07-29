@@ -34,7 +34,7 @@
   # List available aliases
   aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	lg = log --pretty=oneline -n 20 --graph --abbrev-commit
 	# View the current working tree status using the short format
 	st = status
 	# Commit all changes
