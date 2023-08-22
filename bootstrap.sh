@@ -21,6 +21,8 @@ brew install watchman
 brew install mc
 brew install rbenv ruby-build
 brew install nvm
+brew tap facebook/fb
+brew install idb-companion
 mkdir ~/.nvm
 
 echo "installing a few global npm packages"
