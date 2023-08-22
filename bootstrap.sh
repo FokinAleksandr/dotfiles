@@ -30,6 +30,7 @@ npm install -g react-devtools
 echo "installing apps with brew cask"
 brew tap homebrew/cask-versions
 brew install --cask zulu11
+brew install --cask flipper
 brew install --cask discord
 brew install --cask google-chrome
 brew install --cask firefox
