@@ -19,7 +19,6 @@ echo "brew installing stuff"
 brew install git
 brew install watchman
 brew install mc
-brew install rbenv ruby-build
 brew install nvm
 mkdir ~/.nvm
 
@@ -29,17 +28,13 @@ npm install -g react-devtools
 
 echo "installing apps with brew cask"
 brew tap homebrew/cask-versions
-brew install --cask zulu11
-brew install --cask flipper
 brew install --cask discord
 brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask visual-studio-code
 brew install --cask android-studio
-brew install --cask vlc
 brew install --cask webstorm
 brew install --cask telegram
-brew install --cask zoom
 brew cleanup
 
 echo "cloning dotfiles"
