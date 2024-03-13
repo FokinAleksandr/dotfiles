@@ -22,6 +22,9 @@ brew install mc
 brew install nvm
 mkdir ~/.nvm
 
+echo "installing node 18"
+nvm install 18
+
 echo "installing a few global npm packages"
 npm install -g fkill-cli
 npm install -g react-devtools
