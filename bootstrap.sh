@@ -12,15 +12,28 @@ sudo spctl --master-disable
 
 echo "installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+echo "cloning dotfiles"
+rm -rf "${HOME}/Sources/dotfiles"
+git clone https://github.com/FokinAleksandr/dotfiles.git "${HOME}/Sources/dotfiles"
+
+rsync --exclude ".git/" \
+  --exclude ".DS_Store" \
+  --exclude "bootstrap.sh" \
+  --exclude ".macos" \
+  --exclude "README.md" \
+  -avh --no-perms "${HOME}/Sources/dotfiles/" ~;
+
+source "${HOME}/Sources/dotfiles/.macos"
+
+mkdir ~/.nvm
+source ~/.zshrc
 
 echo "brew installing stuff"
 brew install git
 brew install watchman
 brew install mc
 brew install nvm
-mkdir ~/.nvm
 
 echo "installing node 18"
 nvm install 18
@@ -39,17 +52,3 @@ brew install --cask android-studio
 brew install --cask webstorm
 brew install --cask telegram
 brew cleanup
-
-echo "cloning dotfiles"
-rm -rf "${HOME}/Sources/dotfiles"
-git clone https://github.com/FokinAleksandr/dotfiles.git "${HOME}/Sources/dotfiles"
-
-rsync --exclude ".git/" \
-  --exclude ".DS_Store" \
-  --exclude "bootstrap.sh" \
-  --exclude ".macos" \
-  --exclude "README.md" \
-  -avh --no-perms "${HOME}/Sources/dotfiles/" ~;
-
-source "${HOME}/Sources/dotfiles/.macos"
-source ~/.zshrc
