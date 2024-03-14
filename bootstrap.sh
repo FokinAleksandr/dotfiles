@@ -38,6 +38,9 @@ brew install nvm
 echo "installing node 18"
 nvm install 18
 
+# enables yarn
+corepack enable
+
 echo "installing a few global npm packages"
 npm install -g fkill-cli
 npm install -g react-devtools
