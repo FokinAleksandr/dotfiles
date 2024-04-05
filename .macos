@@ -57,7 +57,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 ###############################################################################
 
 # Save screenshots to the Documents
-defaults write com.apple.screencapture location -string "${HOME}/Documents"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots"
 
 ###############################################################################
 # Finder                                                                      #
