@@ -7,9 +7,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-echo "allow apps downloaded from anywhere"
-sudo spctl --master-disable
-
 echo "installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -31,27 +28,8 @@ source ~/.zshrc
 
 echo "brew installing stuff"
 brew install git
-brew install watchman
 brew install mc
 brew install nvm
 
 echo "installing node 18"
-nvm install 18
-
-# enables yarn
-corepack enable
-
-echo "installing a few global npm packages"
-npm install -g fkill-cli
-npm install -g react-devtools
-
-echo "installing apps with brew cask"
-brew tap homebrew/cask-versions
-brew install --cask discord
-brew install --cask google-chrome
-brew install --cask firefox
-brew install --cask visual-studio-code
-brew install --cask android-studio
-brew install --cask webstorm
-brew install --cask telegram
-brew cleanup
+nvm install 22
